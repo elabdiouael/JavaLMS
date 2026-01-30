@@ -1,66 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useState } from 'react';
+import SlidePresenter from '../components/SlidePresenter';
+import Navbar from '../components/Navbar';
+
+// Import All Data Parts
+import { slidesData as part1Data } from '../data/slides';       
+import { slidesData as part2Data } from '../data/slidesPart2';  
+import { slidesData as part3Data } from '../data/slidesPart3'; 
+import { slidesData as part4Data } from '../data/slidesPart4'; 
 
 export default function Home() {
+  const [activePart, setActivePart] = useState(1);
+
+  // Selector Logic
+  const getCurrentSlides = () => {
+    switch (activePart) {
+      case 1: return part1Data;
+      case 2: return part2Data;
+      case 3: return part3Data;
+      case 4: return part4Data;
+      default: return part1Data;
+    }
+  };
+
+  const currentSlides = getCurrentSlides();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main style={{ position: 'relative', width: '100vw', height: '100vh', overflow: 'hidden', background: '#020617' }}>
+      
+      {/* Navigation Bar */}
+      <Navbar activePart={activePart} onSelect={setActivePart} />
+
+      {/* Slide Presenter */}
+      {/* Key forces React to re-mount component when changing parts (resets slide index to 0) */}
+      <SlidePresenter 
+        key={activePart} 
+        slides={currentSlides || []} 
+      />
+
+    </main>
   );
 }

@@ -1,0 +1,181 @@
+/* src/styles/CyberTheme.module.css */
+
+/* --- Variables --- */
+.container {
+  --bg-deep: #030712;
+  --glass-bg: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --primary-glow: #3b82f6;
+  --secondary-glow: #8b5cf6;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --code-bg: #0f172a;
+  
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Animated Background Grid --- */
+.backgroundGrid {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+  animation: planeMove 20s linear infinite;
+  z-index: 1;
+}
+
+/* --- Floating Orbs (Glow effects) --- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 2;
+  opacity: 0.6;
+}
+.orb1 {
+  top: -10%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: var(--primary-glow);
+  animation: float 10s ease-in-out infinite;
+}
+.orb2 {
+  bottom: -10%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: var(--secondary-glow);
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+/* --- The Main Card (Glassmorphism) --- */
+.card {
+  position: relative;
+  z-index: 10;
+  width: 90%;
+  max-width: 1200px;
+  height: 85%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* --- Header & Typography --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+.badge {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* --- Content Layouts --- */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.fullWidth {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+/* --- Code Block Design (Mac Terminal Style) --- */
+.codeWindow {
+  background: var(--code-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--glass-border);
+  font-family: 'Fira Code', monospace;
+  position: relative;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.windowControls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ef4444; }
+.yellow { background: #eab308; }
+.green { background: #22c55e; }
+
+.pre {
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+/* --- Animations Keyframes --- */
+@keyframes planeMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 20px); }
+}
+
+/* --- Progress Bar --- */
+.progressBarContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+}
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+  transition: width 0.3s ease;
+}
