@@ -50,7 +50,7 @@ const InheritanceVisualizer = () => {
 
             {created && (
                 <div style={{ background: '#0f172a', border: '1px solid #22c55e', padding: '15px', borderRadius: '12px', width: '100%', maxWidth: '400px', animation: 'fadeIn 0.5s' }}>
-                    <div style={{ color: '#22c55e', textAlign: 'center', marginBottom: '10px', fontSize: '0.9rem' }}>Objet fl' Heap (Memory)</div>
+                    <div style={{ color: '#22c55e', textAlign: 'center', marginBottom: '10px', fontSize: '0.9rem' }}>Objet fl&apos; Heap (Memory)</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', fontSize: '1rem', color: '#f8fafc' }}>
                         <div><strong style={{ color: '#3b82f6' }}>name:</strong> "Ali" <span style={{fontSize: '0.7rem', color: '#64748b'}}>(mn Employee)</span></div>
                         <div><strong style={{ color: '#3b82f6' }}>salary:</strong> 8000 <span style={{fontSize: '0.7rem', color: '#64748b'}}>(mn Employee)</span></div>
@@ -128,15 +128,15 @@ export const slidesData: SlideContent[] = [
     content: (
       <div>
         <p style={{fontSize: '1.1rem', marginBottom: '15px'}}>
-            F charika, 3endna <code>Manager</code> w <code>Developer</code>. Bjoujhoum 3endhom <em>name</em>, <em>salary</em>, w method <em>work()</em>. Wach nketbou had l'code m3awed f bjouj classes?
+            F charika, 3endna <code>Manager</code> w <code>Developer</code>. Bjoujhoum 3endhom <em>name</em>, <em>salary</em>, w method <em>work()</em>. Wach nketbou had l&apos;code m3awed f bjouj classes?
         </p>
         
         <p style={{ marginTop: '15px' }}>
-          <strong>L'Hell:</strong> Kansaybou Class jdida smitha <code>Employee</code> (L'Walid/Superclass) n7ettou fiha l'code l'mcharak. W nkheliw <code>Manager</code> w <code>Developer</code> (L'wlad/Subclasses) ywrtou menha b l'mot cle <strong>extends</strong>.
+          <strong>L&apos;Hell:</strong> Kansaybou Class jdida smitha <code>Employee</code> (L&apos;Walid/Superclass) n7ettou fiha l&apos;code l&apos;mcharak. W nkheliw <code>Manager</code> w <code>Developer</code> (L&apos;wlad/Subclasses) ywrtou menha b l&apos;mot cle <strong>extends</strong>.
         </p>
         <ul style={{ marginTop: '15px', lineHeight: '2' }}>
-            <li>L'weld kayakhod ga3 l'attributes w l'methods dyal l'walid (li machi private).</li>
-            <li>L'weld y9der yzid l'khasayess dyalou (bhal <code>language</code> l'Developer).</li>
+            <li>L&apos;weld kayakhod ga3 l&apos;attributes w l&apos;methods dyal l&apos;walid (li machi private).</li>
+            <li>L&apos;weld y9der yzid l&apos;khasayess dyalou (bhal <code>language</code> l&apos;Developer).</li>
         </ul>
       </div>
     ),
@@ -151,7 +151,7 @@ export const slidesData: SlideContent[] = [
     layout: "code-focus",
     content: (
       <div>
-        <p>Bach t3ref wach khassek tdir l'heritage awla la f design dyalek, sawel rassek: <strong>Wach A IS-A B? (Wach A houwa B?)</strong></p>
+        <p>Bach t3ref wach khassek tdir l&apos;heritage awla la f design dyalek, sawel rassek: <strong>Wach A IS-A B? (Wach A houwa B?)</strong></p>
         <ul style={{ marginTop: '15px', lineHeight: '2.2' }}>
             <li>Wach <em>Developer</em> houwa <em>Employee</em>? <strong>Ah!</strong> (Inheritance mzyana).</li>
             <li>Wach <em>Car</em> hiya <em>Engine</em>? <strong>La!</strong> (Car <em>has-a</em> Engine. Hada smito Composition, machi Inheritance).</li>
@@ -191,16 +191,16 @@ public class Developer extends Employee {
     content: (
       <div>
         
-        <h3 style={{ color: '#ef4444' }}>L'Qanoun l'kbir dyal l'Memoire:</h3>
+        <h3 style={{ color: '#ef4444' }}>L&apos;Qanoun l&apos;kbir dyal l&apos;Memoire:</h3>
         <p style={{ marginTop: '10px' }}>
-          Mat9derch tbni l'weld 7ta tbni l'walid! Melli kaddir <code>new Developer()</code>, l'constructor dyal Developer awel 7aja kaydirha hia kay3iyyet l'constructor dyal Employee.
+          Mat9derch tbni l&apos;weld 7ta tbni l&apos;walid! Melli kaddir <code>new Developer()</code>, l&apos;constructor dyal Developer awel 7aja kaydirha hia kay3iyyet l&apos;constructor dyal Employee.
         </p>
         <p style={{ marginTop: '15px' }}>
-          Had l'3eyta kaddar b l'mot cle <strong><code>super()</code></strong>.
+          Had l&apos;3eyta kaddar b l&apos;mot cle <strong><code>super()</code></strong>.
         </p>
         <ul style={{ marginTop: '15px', lineHeight: '1.8', fontSize: '0.9rem' }}>
             <li>Ila maktbtihach, Java kaydir <code>super()</code> (khawya) b khbya f ster lewwel.</li>
-            <li>Ila l'walid 3endou constructor fih parametres, <strong>khassk bzzez</strong> tekteb <code>super(val1, val2)</code> w tsift lih l'data.</li>
+            <li>Ila l&apos;walid 3endou constructor fih parametres, <strong>khassk bzzez</strong> tekteb <code>super(val1, val2)</code> w tsift lih l&apos;data.</li>
         </ul>
       </div>
     ),
@@ -215,9 +215,9 @@ public class Developer extends Employee {
     layout: "code-focus",
     content: (
       <div>
-        <p>Chuf kifach l'Weld kayched ga3 l'parametres f l'usine dyalo, kayhez li kayhmou l'Walid, w kaysifthom lih f <code>super()</code>.</p>
+        <p>Chuf kifach l&apos;Weld kayched ga3 l&apos;parametres f l&apos;usine dyalo, kayhez li kayhmou l&apos;Walid, w kaysifthom lih f <code>super()</code>.</p>
         <div style={{marginTop: '20px', padding: '10px', background: 'rgba(245, 158, 11, 0.1)', borderLeft: '3px solid #f59e0b', fontSize: '0.9rem'}}>
-            🚨 <strong>Attention:</strong> <code>super()</code> khassha DIMA tkoun hia awel ster f l'constructor dyal l'weld.
+            🚨 <strong>Attention:</strong> <code>super()</code> khassha DIMA tkoun hia awel ster f l&apos;constructor dyal l&apos;weld.
         </div>
       </div>
     ),
@@ -253,13 +253,13 @@ public class Developer extends Employee {
     layout: "code-focus",
     content: (
       <div>
-        <p>Tkhayel Walid 3endou method <code>work()</code> katgoul "Kheddam". L'Developer bgha ybeddel had l'hadra w ygoul "Kanbrmej".</p>
+        <p>Tkhayel Walid 3endou method <code>work()</code> katgoul "Kheddam". L&apos;Developer bgha ybeddel had l&apos;hadra w ygoul "Kanbrmej".</p>
         <p style={{ marginTop: '15px' }}>
-          Hadi hiya l'<strong>Overriding</strong>: T3awed tekteb nefs l'method li kayna f l'walid (nefs ssmia, nefs l'parametres) west l'weld, bach tbeddel l'khedma dyalha.
+          Hadi hiya l&apos;<strong>Overriding</strong>: T3awed tekteb nefs l&apos;method li kayna f l&apos;walid (nefs ssmia, nefs l&apos;parametres) west l&apos;weld, bach tbeddel l&apos;khedma dyalha.
         </p>
         <ul style={{ marginTop: '15px', lineHeight: '2' }}>
-            <li>Kansta3mlou l'annotation <code>@Override</code> (machi darouriya mais meziana l'validation).</li>
-            <li>Melli kaddir <code>dev.work()</code>, Java kayexecuti dyal l'Weld, machi dyal l'Walid.</li>
+            <li>Kansta3mlou l&apos;annotation <code>@Override</code> (machi darouriya mais meziana l&apos;validation).</li>
+            <li>Melli kaddir <code>dev.work()</code>, Java kayexecuti dyal l&apos;Weld, machi dyal l&apos;Walid.</li>
         </ul>
       </div>
     ),
